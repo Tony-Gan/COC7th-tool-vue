@@ -35,18 +35,46 @@ h2 {
   align-items: center;
 }
 
-a {
-  text-decoration: none;
+button {
   font-family: "ZCOOL XiaoWei", serif;
   color: white;
   background: linear-gradient(135deg, rgba(28, 43, 27, 1) 35%, rgba(51, 136, 85, 1) 100%);
   border: 4px solid #666659;
-  font-size: 30px;
-  width: 300px;
+  font-size: 20px;
+  width: 250px;
   text-align: center;
-  padding: 35px;
+  padding: 25px;
   cursor: pointer;
   text-shadow: 2px 2px 2px #1c2b1b;
+}
+
+.normal-description {
+  font-size: 16px;
+  font-family: "Noto Serif SC", serif;
+  padding: 5px 0 5px;
+}
+
+.cthulhu-input label {
+  font-size: 22px;
+  font-family: "ZCOOL XiaoWei", serif;
+}
+
+.cthulhu-input input {
+  font-size: 18px;
+  font-family: "Noto Serif SC", serif;
+  padding: 5px;
+}
+
+.cthulhu-dropdown {
+  font-size: 18px;
+  font-family: "Noto Serif SC", serif;
+  padding: 5px;
+}
+
+.cthulhu-dropdown option {
+  font-size: 18px;
+  font-family: "Noto Serif SC", serif;
+  padding: 5px;
 }
 
 .builder {
@@ -55,13 +83,16 @@ a {
   flex-direction: row;
 }
 
+.hidden {
+  visibility: hidden;
+}
+
 aside {
   display: flex;
   flex-direction: column;
-  padding-left: 16px;
   height: 100vh;
   justify-content: center;
-  width: 350px;
+  width: 10%;
 }
 
 ul {
@@ -87,5 +118,21 @@ li {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  width: 90%;
+}
+
+.step1-inputs {
+  display: flex;
+  flex-direction: row;
+  margin: 30px 0 30px;
+  justify-content: space-evenly;
+}
+
+.step1-buttons,
+.step2-buttons {
+  display: flex;
+  flex-direction: row;
+  margin: 30px 0 30px;
+  justify-content: space-evenly;
 }
 </style>

@@ -1,13 +1,13 @@
 <template>
   <section id="app-functionalities">
-    <cthulhuButtonLink link="/builder/step-one" :buttonText="button1" />
-    <cthulhuButtonLink link="#" :buttonText="button2" />
-    <cthulhuButtonLink link="#" :buttonText="button3" />
+    <cthulhuButton :buttonText="button1" @click="toBuilder" />
+    <cthulhuButton :buttonText="button2" @click="toSceSimulator" />
+    <cthulhuButton :buttonText="button3" @click="toBatSimulator" />
   </section>
 </template>
 
 <script>
-import cthulhuButtonLink from "../SingleElement/CthulhuButtonLink.vue";
+import cthulhuButton from "../SingleElement/CthulhuButton.vue";
 
 export default {
   data() {
@@ -18,7 +18,18 @@ export default {
     };
   },
   components: {
-    cthulhuButtonLink,
+    cthulhuButton,
+  },
+  methods: {
+    toBuilder() {
+      location.href = "/builder/step-one";
+    },
+    toSceSimulator() {
+      alert("还没做好呢");
+    },
+    toBatSimulator() {
+      alert("还没做好呢");
+    },
   },
 };
 </script>

@@ -15,5 +15,8 @@ export default {
     mainPageHeader,
     mainPageButtons,
   },
+  beforeCreate() {
+    localStorage.clear();
+  },
 };
 </script>

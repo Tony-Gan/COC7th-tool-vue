@@ -1,7 +1,7 @@
 <template>
-  <div>
+  <div class="cthulhu-input">
     <questionLabel>{{ contents }}</questionLabel>
-    <input :type="textType" :style="applyWidth" @input="onInput" />
+    <input :type="textType" :style="width" @input="onInput" :min="parseInt(minValue)" :max="parseInt(maxValue)" />
   </div>
 </template>
 
@@ -9,6 +9,13 @@
 import questionLabel from "./QuestioinLabel.vue";
 
 export default {
+  data() {
+    return {
+      width: null,
+      minValue: null,
+      maxValue: null,
+    };
+  },
   props: {
     textType: {
       type: String,
@@ -21,6 +28,21 @@ export default {
       type: String,
       default: "350px",
     },
+    min: {
+      type: String,
+    },
+    max: {
+      type: String,
+    },
+  },
+  beforeMount() {
+    this.width = this.applyWidth();
+    if (this.min) {
+      this.minValue = this.min;
+    }
+    if (this.max) {
+      this.maxValue = this.max;
+    }
   },
   methods: {
     applyWidth() {
