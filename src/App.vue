@@ -7,6 +7,8 @@ body {
   overflow: hidden;
   background: no-repeat url("./assets/background1.png");
   background-size: cover;
+  margin: 0;
+  color: white;
 }
 
 h1 {
@@ -48,11 +50,18 @@ a {
 }
 
 .builder {
-  overflow: hidden;
-  background: no-repeat url("./assets/background2.jpg");
   background-size: cover;
   display: flex;
+  flex-direction: row;
+}
+
+aside {
+  display: flex;
   flex-direction: column;
+  padding-left: 16px;
+  height: 100vh;
+  justify-content: center;
+  width: 350px;
 }
 
 ul {
@@ -62,9 +71,21 @@ ul {
 
 li {
   list-style-type: none;
+  font-family: "Noto Serif SC", serif;
+  font-weight: 300;
+  font-size: 14px;
+  color: grey;
+  padding: 6px 0 6px;
 }
 
 .current {
-  color: red;
+  color: white;
+  text-decoration: underline;
+}
+
+.contents {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 </style>

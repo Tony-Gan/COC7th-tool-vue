@@ -1,13 +1,13 @@
 <template>
   <section id="app-functionalities">
-    <cthulhuButton link="/builder/step-one" :buttonText="button1" />
-    <cthulhuButton link="#" :buttonText="button2" />
-    <cthulhuButton link="#" :buttonText="button3" />
+    <cthulhuButtonLink link="/builder/step-one" :buttonText="button1" />
+    <cthulhuButtonLink link="#" :buttonText="button2" />
+    <cthulhuButtonLink link="#" :buttonText="button3" />
   </section>
 </template>
 
 <script>
-import cthulhuButton from "../SingleElement/CthulhuButton.vue";
+import cthulhuButtonLink from "../SingleElement/CthulhuButtonLink.vue";
 
 export default {
   data() {
@@ -18,7 +18,7 @@ export default {
     };
   },
   components: {
-    cthulhuButton,
+    cthulhuButtonLink,
   },
 };
 </script>

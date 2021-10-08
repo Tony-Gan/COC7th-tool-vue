@@ -12,7 +12,7 @@
 export default {
   props: {
     currentIndex: {
-      type: Number,
+      type: String,
       require: true,
     },
   },
@@ -32,7 +32,7 @@ export default {
   },
   methods: {
     checkIndex(index) {
-      return index === this.currentIndex;
+      return index == this.currentIndex;
     },
   },
 };
