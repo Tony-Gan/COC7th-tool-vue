@@ -1,21 +1,6 @@
 <template>
-  <section>
-    <mainPageHeader />
-    <mainPageButtons />
-  </section>
+  <router-view></router-view>
 </template>
-
-<script>
-import mainPageHeader from "./components/MainPageHeader.vue";
-import mainPageButtons from "./components/MainPageButtons.vue";
-
-export default {
-  components: {
-    mainPageHeader,
-    mainPageButtons,
-  },
-};
-</script>
 
 <style>
 body {
@@ -48,7 +33,8 @@ h2 {
   align-items: center;
 }
 
-button {
+a {
+  text-decoration: none;
   font-family: "ZCOOL XiaoWei", serif;
   color: white;
   background: linear-gradient(135deg, rgba(28, 43, 27, 1) 35%, rgba(51, 136, 85, 1) 100%);
@@ -59,5 +45,26 @@ button {
   padding: 35px;
   cursor: pointer;
   text-shadow: 2px 2px 2px #1c2b1b;
+}
+
+.builder {
+  overflow: hidden;
+  background: no-repeat url("./assets/background2.jpg");
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+}
+
+ul {
+  display: flex;
+  flex-direction: column;
+}
+
+li {
+  list-style-type: none;
+}
+
+.current {
+  color: red;
 }
 </style>
