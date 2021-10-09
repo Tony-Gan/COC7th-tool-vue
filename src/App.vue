@@ -48,6 +48,28 @@ button {
   text-shadow: 2px 2px 2px #1c2b1b;
 }
 
+.column-kvp {
+  display: flex;
+  flex-direction: column;
+}
+
+.row-kvp {
+  display: flex;
+  flex-direction: row;
+}
+
+.column-kvp h5,
+.row-kvp h5 {
+  font-size: 18px;
+  font-family: "ZCOOL XiaoWei", serif;
+}
+
+.column-kvp p,
+.row-kvp p {
+  font-size: 16px;
+  font-family: "Noto Serif SC", serif;
+}
+
 .normal-description {
   font-size: 16px;
   font-family: "Noto Serif SC", serif;
@@ -133,6 +155,12 @@ li {
   display: flex;
   flex-direction: row;
   margin: 30px 0 30px;
+  justify-content: space-evenly;
+}
+
+#step2-table {
+  display: flex;
+  flex-direction: row;
   justify-content: space-evenly;
 }
 </style>

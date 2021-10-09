@@ -1,13 +1,13 @@
 <template>
   <section class="builder">
-    <progressBar currentIndex="1" />
+    <progressBar currentIndex="2" />
     <contents />
   </section>
 </template>
 
 <script>
 import progressBar from "../Navigation/ProgressBar.vue";
-import contents from "./StepTwoContents.vue";
+import contents from "./StepThreeContents.vue";
 
 export default {
   components: {

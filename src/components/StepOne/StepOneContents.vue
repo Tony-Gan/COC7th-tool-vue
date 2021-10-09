@@ -73,7 +73,6 @@ export default {
       return true;
     },
     saveInformation() {
-      console.log(2323);
       if (document.querySelector(".step1-buttons button").disabled) {
         localStorage.setItem("name", this.userName);
         localStorage.setItem("gender", this.userGender);
