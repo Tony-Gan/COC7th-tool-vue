@@ -163,4 +163,15 @@ li {
   flex-direction: row;
   justify-content: space-evenly;
 }
+
+.column {
+  margin-left: 8%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.column select {
+  margin-left: 20px;
+}
 </style>
