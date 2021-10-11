@@ -99,6 +99,24 @@ button {
   padding: 5px;
 }
 
+#dropdown-input-pair {
+  display: flex;
+  flex-direction: column;
+}
+
+#dropdown-input-pair select {
+  font-size: 18px;
+  font-family: "Noto Serif SC", serif;
+  padding: 5px;
+  margin-bottom: 8px;
+}
+
+#dropdown-input-pair input {
+  font-size: 18px;
+  font-family: "Noto Serif SC", serif;
+  padding: 5px;
+}
+
 .builder {
   background-size: cover;
   display: flex;
@@ -151,7 +169,8 @@ li {
 }
 
 .step1-buttons,
-.step2-buttons {
+.step2-buttons,
+.step3-buttons {
   display: flex;
   flex-direction: row;
   margin: 30px 0 30px;
@@ -161,17 +180,24 @@ li {
 #step2-table {
   display: flex;
   flex-direction: row;
-  justify-content: space-evenly;
+  justify-content: space-between;
+  margin: 0 3% 0;
 }
 
 .column {
-  margin-left: 8%;
   display: flex;
   flex-direction: row;
   align-items: center;
+  margin-left: 3%;
 }
 
 .column select {
   margin-left: 20px;
+}
+
+#step3-table {
+  display: flex;
+  justify-content: space-between;
+  margin: 0 3% 0;
 }
 </style>

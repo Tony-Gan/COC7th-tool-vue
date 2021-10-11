@@ -1,7 +1,7 @@
 <template>
   <div>
     <questionLabel>{{ labelContents }}</questionLabel>
-    <select class="cthulhu-dropdown" :style="width" value="" @change="onChange">
+    <select class="cthulhu-dropdown" :style="width" :defaultValue="defaultValue" @change="onChange">
       <option v-for="item in contents" :key="item" :value="item">{{ item }}</option>
     </select>
   </div>
@@ -21,6 +21,10 @@ export default {
     labelWidth: {
       type: String,
       default: "350px",
+    },
+    defaultValue: {
+      type: String,
+      default: "",
     },
   },
   beforeMount() {
