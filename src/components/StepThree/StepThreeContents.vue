@@ -50,128 +50,11 @@
 import stepTwoTable from "../StepTwo/StepTwoTable.vue";
 import cthulhuDropdown from "../SingleElement/CthulhuDropdown.vue";
 import { OCCUPATION_LIST, SKILL_LIST } from "../../data/skillsAndOccupations";
+import { initSkill } from "../../data/initSkill";
+import { recursive_addition, checkIfList } from "../../data/supportFunctions";
 import questionLabel from "../SingleElement/QuestioinLabel.vue";
 import stepThreeTable from "./StepThreeTable.vue";
 import cthulhuButton from "../SingleElement/CthulhuButton.vue";
-
-const checkIfList = (value) => {
-  if (typeof value == typeof ["a", "b"]) {
-    let result = [];
-    value.forEach((skill) => {
-      if (typeof skill == typeof SKILL_LIST.ACCOUNTING) {
-        result.push(skill);
-      } else if (typeof skill == typeof ["a", "b"]) {
-        skill.forEach((single) => {
-          result.push(single);
-        });
-      }
-    });
-    return result;
-  } else if (value == SKILL_LIST.OTHER) {
-    let result = [];
-    for (const skill in SKILL_LIST) {
-      result.push(SKILL_LIST[skill]);
-    }
-    result = result.slice(0, 95);
-    return result;
-  } else {
-    return [value];
-  }
-};
-
-localStorage.setItem(SKILL_LIST.ACCOUNTING, 5);
-localStorage.setItem(SKILL_LIST.ACTING, 5);
-localStorage.setItem(SKILL_LIST.ANIMAL_HANDLING, 5);
-localStorage.setItem(SKILL_LIST.ANTHROPOLOGY, 1);
-localStorage.setItem(SKILL_LIST.APPRAISE, 5);
-localStorage.setItem(SKILL_LIST.ART_CRAFT, 5);
-localStorage.setItem(SKILL_LIST.ARTILLERY, 1);
-localStorage.setItem(SKILL_LIST.ASTRONOMY, 1);
-localStorage.setItem(SKILL_LIST.AXE, 15);
-localStorage.setItem(SKILL_LIST.BIOLOGY, 1);
-localStorage.setItem(SKILL_LIST.BOTANY, 1);
-localStorage.setItem(SKILL_LIST.BOW, 15);
-localStorage.setItem(SKILL_LIST.BRAWL, 25);
-localStorage.setItem(SKILL_LIST.CHAINSAW, 10);
-localStorage.setItem(SKILL_LIST.CHARM, 15);
-localStorage.setItem(SKILL_LIST.CHEMISTRY, 1);
-localStorage.setItem(SKILL_LIST.CLIMB, 20);
-localStorage.setItem(SKILL_LIST.COMPUTER_USE, 5);
-localStorage.setItem(SKILL_LIST.CREDIT_RATING, 0);
-localStorage.setItem(SKILL_LIST.CRYPTOGRAPHY, 1);
-localStorage.setItem(SKILL_LIST.CTHULHU_MYTHOS, 0);
-localStorage.setItem(SKILL_LIST.DEMOLITIONS, 1);
-localStorage.setItem(SKILL_LIST.DISGUISE, 5);
-localStorage.setItem(SKILL_LIST.DODGE, Math.floor(localStorage.getItem("dex") / 2));
-localStorage.setItem(SKILL_LIST.DIVING, 1);
-localStorage.setItem(SKILL_LIST.DRIVE_AUTO, 20);
-localStorage.setItem(SKILL_LIST.ELECTRICAL_REPAIR, 1);
-localStorage.setItem(SKILL_LIST.ELECTRONICS, 1);
-localStorage.setItem(SKILL_LIST.ENGINEERING, 1);
-localStorage.setItem(SKILL_LIST.FARMING, 5);
-localStorage.setItem(SKILL_LIST.FAST_TALK, 5);
-localStorage.setItem(SKILL_LIST.FIGHTING, 15);
-localStorage.setItem(SKILL_LIST.FIRST_AID, 30);
-localStorage.setItem(SKILL_LIST.FLAIL, 10);
-localStorage.setItem(SKILL_LIST.FLAMETHROWER, 10);
-localStorage.setItem(SKILL_LIST.FORENSICS, 1);
-localStorage.setItem(SKILL_LIST.FORGERY, 5);
-localStorage.setItem(SKILL_LIST.GARROTE, 15);
-localStorage.setItem(SKILL_LIST.GEOLOGY, 1);
-localStorage.setItem(SKILL_LIST.HANDGUN, 20);
-localStorage.setItem(SKILL_LIST.HEAVY_WEAPONS, 10);
-localStorage.setItem(SKILL_LIST.HEBREW, 1);
-localStorage.setItem(SKILL_LIST.HISTORY, 5);
-localStorage.setItem(SKILL_LIST.HYPNOSIS, 1);
-localStorage.setItem(SKILL_LIST.INSTRUMENT, 5);
-localStorage.setItem(SKILL_LIST.INTIMIDATE, 15);
-localStorage.setItem(SKILL_LIST.JUMP, 20);
-localStorage.setItem(SKILL_LIST.LANGUAGE_OTHER, 1);
-localStorage.setItem(SKILL_LIST.LANGUAGE_OWN, localStorage.getItem("edu"));
-localStorage.setItem(SKILL_LIST.LATIN, 1);
-localStorage.setItem(SKILL_LIST.LAW, 5);
-localStorage.setItem(SKILL_LIST.LIBRARY_USE, 20);
-localStorage.setItem(SKILL_LIST.LISTEN, 20);
-localStorage.setItem(SKILL_LIST.LITERATURE, 5);
-localStorage.setItem(SKILL_LIST.LOCKSMITH, 1);
-localStorage.setItem(SKILL_LIST.LORE, 1);
-localStorage.setItem(SKILL_LIST.MACHINE_GUN, 10);
-localStorage.setItem(SKILL_LIST.MATHEMATICS, 10);
-localStorage.setItem(SKILL_LIST.MECHANICAL_REPAIR, 10);
-localStorage.setItem(SKILL_LIST.MEDICINE, 1);
-localStorage.setItem(SKILL_LIST.METEOROLOGY, 1);
-localStorage.setItem(SKILL_LIST.NATURAL_WORLD, 10);
-localStorage.setItem(SKILL_LIST.NAVIGATION, 10);
-localStorage.setItem(SKILL_LIST.NON_OWN_LANGUAGE, 1);
-localStorage.setItem(SKILL_LIST.OCCULT, 5);
-localStorage.setItem(SKILL_LIST.OPERATE_HEAVY_MACHINERY, 1);
-localStorage.setItem(SKILL_LIST.PERSUADE, 10);
-localStorage.setItem(SKILL_LIST.PHARMACY, 1);
-localStorage.setItem(SKILL_LIST.PHOTOGRAPHY, 5);
-localStorage.setItem(SKILL_LIST.PHYSICS, 1);
-localStorage.setItem(SKILL_LIST.PILOT, 1);
-localStorage.setItem(SKILL_LIST.PILOT_AIRCRAFT, 1);
-localStorage.setItem(SKILL_LIST.PILOT_BOAT, 1);
-localStorage.setItem(SKILL_LIST.PSYCHOANALYSIS, 1);
-localStorage.setItem(SKILL_LIST.PSYCHOLOGY, 10);
-localStorage.setItem(SKILL_LIST.READ_LIPS, 1);
-localStorage.setItem(SKILL_LIST.RIDE, 5);
-localStorage.setItem(SKILL_LIST.RIFLE, 25);
-localStorage.setItem(SKILL_LIST.SCIENCE, 1);
-localStorage.setItem(SKILL_LIST.SHOTGUN, 25);
-localStorage.setItem(SKILL_LIST.SLEIGHT_OF_HAND, 10);
-localStorage.setItem(SKILL_LIST.SPEAR, 20);
-localStorage.setItem(SKILL_LIST.SPOT_HIDDEN, 25);
-localStorage.setItem(SKILL_LIST.STEALTH, 20);
-localStorage.setItem(SKILL_LIST.SUBMACHINE_GUN, 15);
-localStorage.setItem(SKILL_LIST.SURVIVAL, 10);
-localStorage.setItem(SKILL_LIST.SWORD, 20);
-localStorage.setItem(SKILL_LIST.SWIM, 20);
-localStorage.setItem(SKILL_LIST.TECHNICAL_DRAWING, 5);
-localStorage.setItem(SKILL_LIST.THROW, 20);
-localStorage.setItem(SKILL_LIST.TRACK, 20);
-localStorage.setItem(SKILL_LIST.WHIP, 5);
-localStorage.setItem(SKILL_LIST.ZOOLOGY, 1);
 
 export default {
   data() {
@@ -229,6 +112,7 @@ export default {
     cthulhuButton,
   },
   beforeMount() {
+    initSkill();
     this.charList = [this.str, this.con, this.siz, this.dex, this.app, this.int, this.pow, this.edu, this.luc];
     for (const occupation in OCCUPATION_LIST) {
       this.dropdownContents.push(OCCUPATION_LIST[occupation].chinese_name);
@@ -273,6 +157,14 @@ export default {
       this.skill6 = checkIfList(selectedOccupation.skills[5]);
       this.skill7 = checkIfList(selectedOccupation.skills[6]);
       this.skill8 = checkIfList(selectedOccupation.skills[7]);
+      this.name1 = this.skill1[0];
+      this.name2 = this.skill2[0];
+      this.name3 = this.skill3[0];
+      this.name4 = this.skill4[0];
+      this.name5 = this.skill5[0];
+      this.name6 = this.skill6[0];
+      this.name7 = this.skill7[0];
+      this.name8 = this.skill8[0];
       if (this.occupationPoints.length == 1) {
         this.skillPoints = this.edu * 4;
       } else if (this.occupationPoints[1].length == 1) {
@@ -418,13 +310,42 @@ export default {
           input.disabled = true;
         });
         document.querySelector("button").disabled = true;
+        const skillsToAdd = [
+          [this.name1, originValue1, this.points1],
+          [this.name2, originValue2, this.points2],
+          [this.name3, originValue3, this.points3],
+          [this.name4, originValue4, this.points4],
+          [this.name5, originValue5, this.points5],
+          [this.name6, originValue6, this.points6],
+          [this.name7, originValue7, this.points7],
+          [this.name8, originValue8, this.points8],
+          [this.name9, originValue9, this.points9],
+        ];
+        skillsToAdd.forEach((skillToAdd) => {
+          if (SKILL_LIST.SCIENCE_SKILLS.includes(skillToAdd[0])) {
+            recursive_addition(skillToAdd[0], SKILL_LIST.SCIENCE_SKILLS, skillToAdd[2]);
+          } else if (SKILL_LIST.ART_CRAFT_SKILLS.includes(skillToAdd[0])) {
+            recursive_addition(skillToAdd[0], SKILL_LIST.ART_CRAFT_SKILLS, skillToAdd[2]);
+          } else if (SKILL_LIST.FIGHTING_SKILLS.includes(skillToAdd[0])) {
+            recursive_addition(skillToAdd[0], SKILL_LIST.FIGHTING_SKILLS, skillToAdd[2]);
+          } else if (SKILL_LIST.FIREARMS_SKILLS.includes(skillToAdd[0])) {
+            recursive_addition(skillToAdd[0], SKILL_LIST.FIREARMS_SKILLS, skillToAdd[2]);
+          } else if (SKILL_LIST.LANGUAGE_OTHER_SKILLS.includes(skillToAdd[0])) {
+            recursive_addition(skillToAdd[0], SKILL_LIST.LANGUAGE_OTHER_SKILLS, skillToAdd[2]);
+          } else if (SKILL_LIST.PILOT_SKILLS.includes(skillToAdd[0])) {
+            recursive_addition(skillToAdd[0], SKILL_LIST.PILOT_SKILLS, skillToAdd[2]);
+          } else {
+            localStorage.setItem(skillToAdd[0], skillToAdd[1] + skillToAdd[2]);
+          }
+        });
       }
     },
     saveInformation() {
       if (!document.querySelector("button").disabled) {
         alert("在进行下一步之前，请先应用修改");
       } else {
-        //
+        console.log(localStorage.getItem(SKILL_LIST.CREDIT_RATING));
+        location.href = "/builder/step-four";
       }
     },
   },

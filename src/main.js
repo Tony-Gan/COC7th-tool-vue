@@ -6,6 +6,8 @@ import MainPage from "./components/MainPage/MainPage.vue";
 import StepOne from "./components/StepOne/StepOne.vue";
 import StepTwo from "./components/StepTwo/StepTwo.vue";
 import StepThree from "./components/StepThree/StepThree.vue";
+import StepFour from "./components/StepFour/StepFour.vue";
+import StepFive from "./components/StepFive/StepFive.vue";
 
 const router = createRouter({
   history: createWebHistory(),
@@ -25,6 +27,14 @@ const router = createRouter({
     {
       path: "/builder/step-three",
       component: StepThree,
+    },
+    {
+      path: "/builder/step-four",
+      component: StepFour,
+    },
+    {
+      path: "/builder/step-five",
+      component: StepFive,
     },
   ],
 });

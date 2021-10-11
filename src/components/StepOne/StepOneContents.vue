@@ -34,7 +34,7 @@ export default {
       dropdownContents: ["男性", "女性", "中性"],
       label3: "你的年龄是",
       userName: null,
-      userGender: null,
+      userGender: "男性",
       userAge: null,
       summary: null,
       showSummary: false,

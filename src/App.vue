@@ -170,7 +170,9 @@ li {
 
 .step1-buttons,
 .step2-buttons,
-.step3-buttons {
+.step3-buttons,
+.step4-buttons,
+.step5-buttons {
   display: flex;
   flex-direction: row;
   margin: 30px 0 30px;
@@ -199,5 +201,32 @@ li {
   display: flex;
   justify-content: space-between;
   margin: 0 3% 0;
+}
+
+#step4-table {
+  display: flex;
+  flex-direction: row;
+  margin: 0 3% 0;
+  align-items: center;
+}
+
+.special-button {
+  margin-right: 5%;
+  font-size: 16px;
+  padding: 5px;
+  width: 120px;
+  height: 60px;
+}
+
+.special-pair {
+  margin-right: 5%;
+}
+
+textarea {
+  padding: 5px;
+  margin: 10px;
+  margin-right: 40px;
+  font-size: 16px;
+  font-family: "Noto Serif SC", serif;
 }
 </style>

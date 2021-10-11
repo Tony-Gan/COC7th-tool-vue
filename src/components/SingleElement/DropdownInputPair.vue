@@ -1,7 +1,7 @@
 <template>
   <div id="dropdown-input-pair">
-    <select :style="dropdownWidth" :defaultValue="getDefault" @change="onChange">
-      <option v-for="item in contents" :key="item" :value="item">{{ item }}</option>
+    <select :style="dropdownWidth" @change="onChange">
+      <option v-for="(item, index) in contents" :key="item" :selected="index == 0" :value="item">{{ item }}</option>
     </select>
     <input
       :type="inputType"
@@ -9,6 +9,7 @@
       @input="onInput"
       :min="parseInt(minValue)"
       :max="parseInt(maxValue)"
+      :value="getDefault()"
       :placeholder="getDefault()"
     />
   </div>
@@ -22,6 +23,7 @@ export default {
       inputWidth: null,
       minValue: null,
       maxValue: null,
+      inputDefault: null,
     };
   },
   props: {
