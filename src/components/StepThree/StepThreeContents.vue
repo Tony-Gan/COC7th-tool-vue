@@ -42,6 +42,7 @@
     <div class="step3-buttons">
       <cthulhuButton buttonText="应用修改" @click="applyModifier" />
       <cthulhuButton buttonText="下一步" @click="saveInformation" />
+      <cthulhuButton buttonText="职业列表" />
     </div>
   </section>
 </template>

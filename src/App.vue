@@ -172,7 +172,8 @@ li {
 .step2-buttons,
 .step3-buttons,
 .step4-buttons,
-.step5-buttons {
+.step5-buttons,
+.step6-buttons {
   display: flex;
   flex-direction: row;
   margin: 30px 0 30px;
@@ -226,6 +227,29 @@ textarea {
   padding: 5px;
   margin: 10px;
   margin-right: 40px;
+  font-size: 16px;
+  font-family: "Noto Serif SC", serif;
+}
+
+.double-inputs {
+  margin-bottom: 1%;
+}
+
+.double-inputs h4 {
+  margin: 3px 0 3px;
+}
+
+.double-inputs .input1 {
+  padding: 2px;
+  width: 150px;
+  font-size: 16px;
+  font-family: "Noto Serif SC", serif;
+}
+
+.double-inputs .input2 {
+  padding: 2px;
+  margin-left: 5%;
+  width: 800px;
   font-size: 16px;
   font-family: "Noto Serif SC", serif;
 }

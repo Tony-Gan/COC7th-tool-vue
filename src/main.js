@@ -8,6 +8,10 @@ import StepTwo from "./components/StepTwo/StepTwo.vue";
 import StepThree from "./components/StepThree/StepThree.vue";
 import StepFour from "./components/StepFour/StepFour.vue";
 import StepFive from "./components/StepFive/StepFive.vue";
+import StepSix from "./components/StepSix/StepSix.vue";
+import StepSeven from "./components/StepSeven/StepSeven.vue";
+import EquipmentTable from "./components/Tables/Equipments.vue";
+import OccupationTable from "./components/Tables/Occupations.vue";
 
 const router = createRouter({
   history: createWebHistory(),
@@ -35,6 +39,22 @@ const router = createRouter({
     {
       path: "/builder/step-five",
       component: StepFive,
+    },
+    {
+      path: "/builder/step-six",
+      component: StepSix,
+    },
+    {
+      path: "/builder/step-seven",
+      component: StepSeven,
+    },
+    {
+      path: "/equipments",
+      component: EquipmentTable,
+    },
+    {
+      path: "/occupations",
+      component: OccupationTable,
     },
   ],
 });
