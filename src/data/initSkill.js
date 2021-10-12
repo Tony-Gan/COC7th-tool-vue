@@ -60,7 +60,7 @@ const initSkill = () => {
   localStorage.setItem(SKILL_LIST.LORE, 1);
   localStorage.setItem(SKILL_LIST.MACHINE_GUN, 10);
   localStorage.setItem(SKILL_LIST.MATHEMATICS, 10);
-  localStorage.setItem(SKILL_LIST.MECHANICAL_REPAIR, 10);
+  localStorage.setItem(SKILL_LIST.MACHENICAL_REPAIR, 10);
   localStorage.setItem(SKILL_LIST.MEDICINE, 1);
   localStorage.setItem(SKILL_LIST.METEOROLOGY, 1);
   localStorage.setItem(SKILL_LIST.NATURAL_WORLD, 10);

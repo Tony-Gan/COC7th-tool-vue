@@ -121,6 +121,7 @@ button {
   background-size: cover;
   display: flex;
   flex-direction: row;
+  align-items: center;
 }
 
 .hidden {
@@ -173,7 +174,8 @@ li {
 .step3-buttons,
 .step4-buttons,
 .step5-buttons,
-.step6-buttons {
+.step6-buttons,
+.step7-buttons {
   display: flex;
   flex-direction: row;
   margin: 30px 0 30px;
@@ -252,5 +254,41 @@ textarea {
   width: 800px;
   font-size: 16px;
   font-family: "Noto Serif SC", serif;
+}
+
+table {
+  font-size: 14px;
+  font-family: "Noto Serif SC", serif;
+}
+
+td {
+  width: 8.3%;
+  color: silver;
+}
+
+.table-title {
+  font-size: 16px;
+  color: white;
+}
+
+.table-large-title {
+  font-size: 18px;
+  color: white;
+}
+
+.first-level {
+  padding: 15px 0 15px;
+  height: 50px;
+}
+
+.scrollable {
+  overflow: auto;
+  display: block;
+  max-height: 400px;
+  padding-top: 5px;
+}
+
+.scrollable td {
+  width: 8.6%;
 }
 </style>

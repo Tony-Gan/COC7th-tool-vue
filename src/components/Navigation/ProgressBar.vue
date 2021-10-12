@@ -25,7 +25,6 @@ export default {
         { text: "个人技能" },
         { text: "背景设置" },
         { text: "携带物品" },
-        { text: "其他设置" },
         { text: "导出人物" },
       ],
     };
