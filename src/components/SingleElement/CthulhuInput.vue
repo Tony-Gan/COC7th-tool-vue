@@ -1,7 +1,14 @@
 <template>
   <div class="cthulhu-input">
     <questionLabel>{{ contents }}</questionLabel>
-    <input :type="textType" :style="width" @input="onInput" :min="parseInt(minValue)" :max="parseInt(maxValue)" />
+    <input
+      :type="textType"
+      :style="width"
+      @input="onInput"
+      :min="parseInt(minValue)"
+      :max="parseInt(maxValue)"
+      :placeholder="parseInt(0)"
+    />
   </div>
 </template>
 

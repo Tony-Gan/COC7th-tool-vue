@@ -175,7 +175,8 @@ li {
 .step4-buttons,
 .step5-buttons,
 .step6-buttons,
-.step7-buttons {
+.step7-buttons,
+.page-buttons {
   display: flex;
   flex-direction: row;
   margin: 30px 0 30px;
@@ -290,5 +291,43 @@ td {
 
 .scrollable td {
   width: 8.6%;
+}
+
+#dice-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#dice-params-upper {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+#dice-params-middle {
+  /* margin: 0 25% 0; */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#dice-params-middle .cthulhu-input {
+  text-align: center;
+}
+
+#dice-params {
+  display: flex;
+  flex-direction: row;
+}
+
+#dice-params div {
+  margin: 25px;
+}
+
+#params-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
 }
 </style>

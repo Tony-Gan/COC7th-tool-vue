@@ -12,6 +12,7 @@ import StepSix from "./components/StepSix/StepSix.vue";
 import StepSeven from "./components/StepSeven/StepSeven.vue";
 import EquipmentTable from "./components/Tables/Equipments.vue";
 import OccupationTable from "./components/Tables/Occupations.vue";
+import DiceSimulator from "./components/DiceSimulator/DiceSimulator.vue";
 
 const router = createRouter({
   history: createWebHistory(),
@@ -55,6 +56,10 @@ const router = createRouter({
     {
       path: "/occupations",
       component: OccupationTable,
+    },
+    {
+      path: "/dice",
+      component: DiceSimulator,
     },
   ],
 });

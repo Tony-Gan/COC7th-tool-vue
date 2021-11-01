@@ -1,7 +1,7 @@
 <template>
   <section id="app-functionalities">
     <cthulhuButton :buttonText="button1" @click="toBuilder" />
-    <cthulhuButton :buttonText="button2" @click="toSceSimulator" />
+    <cthulhuButton :buttonText="button2" @click="toDiceSimulator" />
     <cthulhuButton :buttonText="button3" @click="toBatSimulator" />
   </section>
 </template>
@@ -13,7 +13,7 @@ export default {
   data() {
     return {
       button1: "新建角色",
-      button2: "场景模拟",
+      button2: "骰子工具",
       button3: "战斗模拟",
     };
   },
@@ -24,8 +24,8 @@ export default {
     toBuilder() {
       location.href = "/builder/step-one";
     },
-    toSceSimulator() {
-      alert("还没做好呢");
+    toDiceSimulator() {
+      location.href = "/dice";
     },
     toBatSimulator() {
       alert("还没做好呢");

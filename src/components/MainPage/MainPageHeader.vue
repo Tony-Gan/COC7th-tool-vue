@@ -13,7 +13,7 @@ export default {
     return {
       title: "克苏鲁的呼唤第七版",
       titleInformation: "守密人工具包",
-      version: "Version 0.1.0",
+      version: "Version 0.1.1",
       welcomeWordLine1: "你好，今天是",
       welcomeWordLine2: "今日天气：我不知道，请看窗外，这个网页还没有学会调用你的位置信息",
       date: "",
