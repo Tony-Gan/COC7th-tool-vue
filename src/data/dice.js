@@ -58,11 +58,11 @@ const basicCheck = (skillLevel, penalty = 0, reward = 0) => {
     description = "大失败";
   } else if (checkResult == 1) {
     description = "大成功";
-  } else if (Math.round(skillLevel / 5) > checkResult) {
+  } else if (Math.round(skillLevel / 5) >= checkResult) {
     description = "极难成功";
-  } else if (Math.round(skillLevel / 2) > checkResult) {
+  } else if (Math.round(skillLevel / 2) >= checkResult) {
     description = "困难成功";
-  } else if (skillLevel > checkResult) {
+  } else if (skillLevel >= checkResult) {
     description = "普通成功";
   } else {
     description = "失败";
